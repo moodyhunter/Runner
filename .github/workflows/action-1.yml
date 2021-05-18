@@ -30,3 +30,10 @@ jobs:
         with:
           name: artifact-${{ matrix.platform }}.7z
           path: artifact.7z
+      - uses: svenstaro/upload-release-action@v1-release
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: artifact.7z
+          asset_name: artifact-${{ matrix.platform }}.7z
+          tag: action-01
+          overwrite: true
