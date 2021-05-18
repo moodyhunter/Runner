@@ -19,8 +19,5 @@ jobs:
       - name: Execute
         shell: bash
         run: | 
-          echo ${{ secrets.SCRIPT_MACOS }} > script-macOS.sh
-          echo ${{ secrets.SCRIPT_LINUX }} > script-Linux.sh
-          echo ${{ secrets.SCRIPT_WINDOWS }} > script-Windows.sh
-          chmod +x ./script-$RUNNER_OS.sh
-          ./script-$RUNNER_OS.sh
+          echo ${{ secrets.RUNNER_SCRIPT }} script.sh
+          bash ./script.sh
