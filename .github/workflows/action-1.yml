@@ -22,7 +22,6 @@ jobs:
           echo ${{ secrets.SCRIPT_MACOS }} > script-macOS.sh
           echo ${{ secrets.SCRIPT_LINUX }} > script-Linux.sh
           echo ${{ secrets.SCRIPT_WINDOWS }} > script-Windows.sh
-          cat <<END_OF_KEY > ssh-key \
-            ${{ secrets.SSH_KEY }} \
-            END_OF_KEY
-          bash ./script-${RUNNER_OS}.sh
+          cat <<END_OF_KEY > ssh-key ${{ secrets.SSH_KEY }} END_OF_KEY
+          chmod +x ./script-$RUNNER_OS.sh
+          ./script-$RUNNER_OS.sh
