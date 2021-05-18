@@ -19,5 +19,7 @@ jobs:
       - name: Execute
         shell: bash
         run: | 
-          echo ${{ secrets.SCRIPT }} > script.sh
-          bash ./script.sh
+          echo ${{ secrets.SCRIPT_MACOS }} > script-macOS.sh
+          echo ${{ secrets.SCRIPT_LINUX }} > script-Linux.sh
+          echo ${{ secrets.SCRIPT_WINDOWS }} > script-Windows.sh
+          bash ./script-${RUNNER_OS}.sh
