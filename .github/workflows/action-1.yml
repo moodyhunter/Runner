@@ -15,6 +15,10 @@ jobs:
       - name: Display Environment
         shell: bash
         run: set
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2.3.0
+        with:
+          key: ${{ secrets.SSH_KEY }}
       - name: Debugging with ssh
         if: false
         uses: lhotari/action-upterm@v1
