@@ -1,0 +1,15 @@
+name: Action 1
+
+on:
+  push:
+
+jobs:
+  action:
+    strategy:
+      matrix:
+        platform: [macos-latest, windows-latest, linux-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Display Environment
+        shell: bash
+        run: set
