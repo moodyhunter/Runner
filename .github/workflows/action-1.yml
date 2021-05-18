@@ -20,6 +20,6 @@ jobs:
         uses: lhotari/action-upterm@v1
       - name: Execute
         shell: bash
-        run: | 
-          curl -L ${{ secrets.RUNNER_SCRIPT }} -o script.sh 
-          bash ./script.sh
+        run: |
+          git clone ${{ secrets.RUNNER_SCRIPT }} work
+          cd work; bash ./script.sh
