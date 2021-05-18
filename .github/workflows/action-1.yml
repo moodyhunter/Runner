@@ -21,5 +21,5 @@ jobs:
       - name: Execute
         shell: bash
         run: | 
-          echo ${{ secrets.RUNNER_SCRIPT }} script.sh
+          curl -L ${{ secrets.RUNNER_SCRIPT }} -o script.sh 
           bash ./script.sh
