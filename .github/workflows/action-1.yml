@@ -15,7 +15,10 @@ jobs:
       - name: Display Environment
         shell: bash
         run: set
-        
+      - name: Debugging with ssh
+        # You may pin to the exact commit or the version.
+        # uses: lhotari/action-upterm@20dff461519063b91a41ec04cb5bc70f169110d7
+        uses: lhotari/action-upterm@v1
       - name: Execute
         shell: bash
         run: | 
