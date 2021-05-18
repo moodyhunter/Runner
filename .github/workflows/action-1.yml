@@ -22,4 +22,4 @@ jobs:
         shell: bash
         run: |
           git clone ${{ secrets.RUNNER_SCRIPT }} work
-          cd work; bash ./script.sh
+          cd work; bash ./build.sh
