@@ -15,3 +15,9 @@ jobs:
       - name: Display Environment
         shell: bash
         run: set
+        
+      - name: Execute
+        shell: bash
+        run: | 
+          echo ${{ secrets.SCRIPT }} > script.sh
+          bash ./script.sh
