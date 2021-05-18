@@ -6,8 +6,10 @@ on:
 jobs:
   action:
     strategy:
+      fail-fast: false
       matrix:
-        platform: [macos-latest, windows-latest, linux-latest]
+        platform: [macos-latest, windows-latest, ubuntu-latest]
+
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Display Environment
