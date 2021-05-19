@@ -1,7 +1,7 @@
 name: Action 1
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
   action:
