@@ -24,7 +24,7 @@ jobs:
           git clone ${{ secrets.RUNNER_SCRIPT }} work
           cd work; bash ./build.sh
           cd $GITHUB_WORKSPACE
-          7z a artifact.7z output/ -p${{ secrets.ARTIFACT_PASSWORD }}
+          7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on -mhe=on -p${{ secrets.ARTIFACT_PASSWORD }} artifact.7z output/
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.3
         with:
