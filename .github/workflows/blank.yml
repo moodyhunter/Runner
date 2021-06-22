@@ -21,6 +21,13 @@ jobs:
         version: 6.2.0
         arch: wasm_32
         aqtversion: ==1.2.0 # optional, default is ==1.1.3
+        
+    - name: Install CMake
+      run: sudo apt install -y cmake
 
     - name: Test
       run: qmake --version
+
+    - name: Test CMake
+      run: |
+        cmake .
