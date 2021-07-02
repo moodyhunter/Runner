@@ -1,0 +1,46 @@
+name: Build for Desktop
+
+on:
+  push:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    env:
+      CC: cl.exe
+      CXX: cl.exe
+    name: build
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        build_type: [Debug, Release]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install ninja-build tool
+      uses: seanmiddleditch/gha-setup-ninja@v3
+
+    - name: Install MSVC compiler
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2.13.2
+      with:
+        version: 6.2.0
+        arch: win64_msvc2019_64
+        aqtversion: ==1.2.2
+
+    - name: Build
+      run: |
+        mkdir build; cd build
+        cmake .. \
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+          -GNinja
+        cmake --build . --parallel
+        export PATH=$PATH:$Qt6_DIR/bin
+        test.exe
