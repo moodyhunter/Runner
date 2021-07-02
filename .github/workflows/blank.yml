@@ -43,4 +43,6 @@ jobs:
           -GNinja
         cmake --build . --parallel
         export PATH=$PATH:$Qt6_DIR/bin
-        test.exe
+        ls -lah .
+        echo $PATH
+        ./test.exe
