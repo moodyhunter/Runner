@@ -5,7 +5,7 @@ project(test)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.2 COMPONENTS Widgets REQUIRED)
+find_package(Qt6 6.0 COMPONENTS Widgets REQUIRED)
 
 qt_add_executable(test main.cpp)
 
