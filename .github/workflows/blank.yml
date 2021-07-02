@@ -18,6 +18,7 @@ jobs:
       fail-fast: false
       matrix:
         build_type: [Debug, Release]
+        qtversion: [6.2.0, 6.1.0]
 
     steps:
     - uses: actions/checkout@v2
@@ -31,7 +32,7 @@ jobs:
     - name: Install Qt
       uses: jurplel/install-qt-action@v2.13.2
       with:
-        version: 6.2.0
+        version: ${{ matrix.qtversion }}
         arch: win64_msvc2019_64
         aqtversion: ==1.2.2
 
