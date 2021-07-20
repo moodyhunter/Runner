@@ -9,9 +9,9 @@ defaults:
 
 jobs:
   build:
-    env:
-      CC: cl.exe
-      CXX: cl.exe
+#     env:
+#       CC: cl.exe
+#       CXX: cl.exe
     name: build
     runs-on: ${{ matrix.os }}
     strategy:
