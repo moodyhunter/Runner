@@ -47,5 +47,5 @@ jobs:
         export PATH=$PATH:$Qt6_DIR/bin
         ls -lah .
         echo $PATH
-        ./test.exe || ./test > out.txt
+        ./test.exe > out.txt || ./test > out.txt
         cat ./out.txt
