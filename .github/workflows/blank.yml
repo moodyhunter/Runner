@@ -19,7 +19,7 @@ jobs:
       matrix:
         build_type: [Debug, Release]
         os: [windows-latest, ubuntu-latest, macos-latest]
-        qtversion: [6.2.0, 6.1.2, 6.0.4]
+        qtversion: [6.2.0, 6.0.0, 5.15.0]
 
     steps:
     - uses: actions/checkout@v2
