@@ -13,11 +13,12 @@ jobs:
       CC: cl.exe
       CXX: cl.exe
     name: build
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         build_type: [Debug, Release]
+        os: [windows-latest, ubuntu-latest, macos-latest]
         qtversion: [6.2.0, 6.1.0]
 
     steps:
@@ -46,4 +47,4 @@ jobs:
         export PATH=$PATH:$Qt6_DIR/bin
         ls -lah .
         echo $PATH
-        ./test.exe
+        ./test.exe || ./test
