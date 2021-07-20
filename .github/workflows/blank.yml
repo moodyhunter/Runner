@@ -35,7 +35,7 @@ jobs:
       with:
         version: ${{ matrix.qtversion }}
         arch: win64_msvc2019_64
-        aqtversion: ==1.2.2
+        aqtversion: ==1.2.4
 
     - name: Build
       run: |
