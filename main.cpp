@@ -38,10 +38,10 @@ int main(int argc, char *argv[])
     qDebug() << "Current backend" << QSslSocket::activeBackend();
 #endif
 
-    //    request(QUrl{ "https://www.google.com" });
+    request(QUrl{ "https://www.google.com" });
     request(QUrl{ "https://tls13.akamai.io" });
-    //    request(QUrl{ "https://www.youtube.com" });
-    //    request(QUrl{ "https://github.com" });
+    request(QUrl{ "https://www.youtube.com" });
+    request(QUrl{ "https://github.com" });
     request(QUrl{ "https://bing.com" });
     request(QUrl{ "https://gnu.org" });
     request(QUrl{ "https://qt.io" });
