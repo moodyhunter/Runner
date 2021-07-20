@@ -5,8 +5,8 @@ project(test)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.0 COMPONENTS Widgets REQUIRED)
+find_package(Qt6 6.0 COMPONENTS Widgets Network REQUIRED)
 
 qt_add_executable(test main.cpp)
 
-target_link_libraries(test PRIVATE Qt6::Widgets)
+target_link_libraries(test PRIVATE Qt6::Widgets Qt6::Network)
